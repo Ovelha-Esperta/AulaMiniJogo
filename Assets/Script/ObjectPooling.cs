@@ -3,14 +3,14 @@ using UnityEngine;
 
 public class ObjectPooling : MonoBehaviour
 {
-    //public static ObjectPooling SharedInstance;
-    public List<GameObject> pooledObjects;
-    public GameObject objectToPool;
-    public int amountToPool;
+    [SerializeField] protected GameControl _gameControl;
+    [SerializeField] protected List<GameObject> pooledObjects;
+    [SerializeField] protected GameObject objectToPool;
+    [SerializeField] protected int amountToPool;
 
     public virtual void Awake()
     {
-       // SharedInstance = this;
+        _gameControl = GameObject.FindWithTag("GameController").GetComponent<GameControl>();
     }
 
     public virtual void Start()
