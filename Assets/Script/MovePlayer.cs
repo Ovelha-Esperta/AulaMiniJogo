@@ -9,6 +9,8 @@ public class MovePlayer : MonoBehaviour
     [SerializeField] float _speed;
     [SerializeField] float _jumpForce;
 
+    [SerializeField] int _numbSort;
+
 
 
     void Start()
@@ -31,14 +33,22 @@ public class MovePlayer : MonoBehaviour
     void Jump()
     {
         _rb.linearVelocityY = 0;
-        _rb.AddForceY(_jumpForce);
+        _rb.AddForceY(_jumpForce, ForceMode2D.Impulse);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("JumpGround"))
         {
-            Jump();
+            GroundJumpControl groundJumpControl = collision.gameObject.GetComponent<GroundJumpControl>();
+            if (groundJumpControl._numbCor== _numbSort || groundJumpControl._numbCor == 0)
+            {
+                Jump();
+                Debug.Log("pular");
+
+                _numbSort = Random.Range(1, 5);
+
+            }            
         }
     }
 }
