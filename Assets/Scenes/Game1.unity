@@ -1000,6 +1000,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1316300206}
   - component: {fileID: 1316300207}
+  - component: {fileID: 1316300208}
   m_Layer: 0
   m_Name: GameControl
   m_TagString: GameController
@@ -1037,6 +1038,18 @@ MonoBehaviour:
   _groundBase: {fileID: 2880507962904063048}
   _groundH: 0
   _distance: 5
+--- !u!114 &1316300208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1316300205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bb462316ff24314688bcf8f1b5904cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1768831586
 GameObject:
   m_ObjectHideFlags: 0
